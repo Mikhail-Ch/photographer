@@ -1,0 +1,278 @@
+@import "fonts"
+*
+  box-sizing: border-box
+body
+  height: 100%
+  margin: 0
+  overflow-x: hidden
+  min-width: 320px
+  font-size: 16px
+  font-family: 'PT Sans Caption', Arial, Helvetica, sans-serif
+ul
+  list-style: none
+  padding: 0
+  margin: 0
+a
+  text-decoration: none
+  color: inherit
+.container
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 15px
+.row
+  display: flex
+.sec
+  padding: 100px 0
+  background-color: #f7f7f7
+.header
+  position: absolute
+  z-index: 2
+  top: 0
+  left: 0
+  width: 100%
+  &__sociallink
+    padding: 20px 0
+    a
+      display: inline-block
+      width: 35px
+      img
+        width: 100%
+.banner
+  position: relative
+  background: url(../images/banner-bg.jpeg) no-repeat center
+  background-size: cover
+  padding-top: 80px
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color:#dfe6eeed
+
+  &-wrapp
+    position: relative
+    z-index: 2
+    max-width: 1200px
+    padding: 0 15px
+    margin: 0 auto
+  &__row 
+    display: flex
+    align-items: center
+  &__title
+    flex: 0 0 50%
+    h1
+      font-size: 35px
+      line-height: 1.4
+  &__img
+    flex: 0 0 50%
+    img
+      max-width: 100%
+      margin-bottom: -4px
+.about
+  &__content
+    max-width: 900px
+    margin: 0 auto
+    p
+      font-size: 18px
+      line-height: 1.2
+      margin: 0 0 10px 0
+.work
+  &__row
+    flex-wrap: wrap
+  &__item
+    flex: 1 1 33.333%
+    overflow: hidden
+    max-height: 600px
+    &_lg
+      flex: 1 1 66.666%
+    img
+      width: 100%
+      height: 100%
+      margin: 0
+      object-fit: cover
+    &_text
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      ul, p
+        padding: 50px
+      img
+        height: auto
+    
+.reviews
+  &__img
+    width: 120px
+    height: 120px
+    border: 1px solid #cccccc
+    border-radius: 50%
+    margin: 0 auto 50px
+    img
+      width: 92%
+      border-radius: 50%
+      margin: 5px
+  &__text
+    font-style: italic
+    text-align: center
+  .swiper-container
+    min-height: 300px
+    max-width: 900px
+    margin: 0 auto
+    padding-bottom: 40px
+    .swiper-pagination-bullet
+      width: 15px
+      height: 15px
+      background: transparent
+      border: 1px solid #aaaaaa
+      opacity: 1
+      margin: 0 8px
+      outline: none
+    .swiper-pagination-bullet-active
+      background: #aaaaaa
+.portfolio
+  &-column
+    flex: 0 0 33.333%
+    display: flex
+    flex-wrap: wrap
+    &:nth-child(3)
+      flex-direction: column
+      flex-wrap: nowrap
+  &__item
+    position: relative
+    flex: 1 1 50%
+    transition: .5s
+    cursor: pointer
+    overflow: hidden
+    &_lg
+      max-height: 322px
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+    &:hover
+      animation: blur
+      animation-duration: 1s
+      &::before
+        opacity: 1
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: url(../images/focus.svg) no-repeat center
+      background-size: 150px
+      background-color: #0000008f
+      opacity: 0
+      transition: .5s
+
+  &-bottom
+    background-color: #282f35
+    padding: 75px
+    text-align: center
+    &__btn
+      color: #ffffff
+      display: inline-block
+      padding: 15px 50px
+      border: 1px solid #ffffff
+      text-transform: uppercase
+      letter-spacing: 2px
+      transition: .5s
+      &:hover
+        background-color: #ffffff
+        color: #303030
+
+@keyframes blur
+  0%
+    filter:blur(0)
+  50%
+    filter: blur(2px)
+  100%
+    filter: blur(0)
+    
+
+.contacts 
+  position: relative
+  background: url(../images/contacts_bg.jpg) no-repeat center
+  background-size: cover
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #dfe6eed2
+  &__form
+    position: relative
+    z-index: 2
+    max-width: 500px
+    margin: 0 auto
+    padding: 0 15px
+    form
+      display: flex
+      flex-direction: column
+      align-items: center
+      font-size: 20px
+      input, textarea
+        width: 100%
+        margin-bottom: 25px
+        padding: 10px
+        outline: none
+        font-size: 18px
+        line-height: 1.2
+        background-color: #dfe6ee
+        border: 2px solid #d3d7d9
+      textarea
+        height: 150px
+      button
+        padding: 10px 50px
+        background: transparent
+        border: 2px solid #303030
+        font-size: 18px
+        background-color: #dfe6ee
+        cursor: pointer
+        letter-spacing: 1px
+
+.footer
+  padding: 50px 0
+  background-color: #dfe6ee
+  &-row
+    display: flex
+  &__contacts
+    a
+      display: block
+  &__social
+    display: flex
+    justify-content: center
+    flex-grow: 2
+    a
+      display: block
+      width: 50px
+      margin-right: 10px
+      img
+        width: 100%
+  &__label
+    width: 11%
+
+@media (max-width: 900px)
+  .work__item_text p
+    padding: 30px
+@media (max-width: 768px)
+  .banner__row
+    flex-direction: column
+  .row
+    flex-direction: column
+  .footer
+    .row
+      align-items: center
+    &__contacts
+      margin-bottom: 30px
+@media (max-width: 500px)
+  .sec
+    padding: 50px 0
+  .banner__title h1
+    font-size: 30px
+    line-height: 1.2
